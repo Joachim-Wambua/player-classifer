@@ -1,0 +1,163 @@
+<!doctype html>
+
+<html>
+    <head>
+
+        <!-- CSS code -->
+        <style>
+        form {
+            margin: auto;
+            width: 35%;
+        }
+
+        .result {
+            margin: auto;
+            width: 35%;
+            border: 1px solid #ccc;
+        }
+        </style>
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>FIFA Player Calibre Classifier</title>
+    </head>
+
+    <body>
+        <h1>Player Calibre Classifier</h1>
+
+        <div>
+            <h4>Key</h4>
+            <p>Class 0 : World Class Player</p>
+            <p>Class 1 : Top Player</p>
+            <p>Class 2 : Average Player</p>
+            <p>Class 3 : Below Average Player</p>
+            <br>
+            <br>
+        </div>
+
+        <!-- Use the action attribute to call the 'main' function -->
+        <form action="{{ url_for('predict') }}" method="post">
+        <fieldset>
+            <legend>Input features:</legend>
+            Age:
+            <!-- Required attribute is used to make sure people input values -->
+            <input name="Age" type="number" required>
+            <br>
+            <br> Potential:
+            <input name="Potential" type="number" required>
+            <br>
+            <br> Value:
+            <input name="Value" type="number" required>
+            <br>
+            <br> Special:
+            <input name="Special" type="number" required>
+            <br>
+            <br> Crossing:
+            <input name="Crossing" type="number" required>
+            <br>
+            <br> Finishing:
+            <input name="Finishing" type="number" required>
+            <br>
+            <br> HeadingAccuracy:
+            <input name="HeadingAccuracy" type="number" required>
+            <br>
+            <br> ShortPassing:
+            <input name="ShortPassing" type="number" required>
+            <br>
+            <br> Dribbling:
+            <input name="Dribbling" type="number" required>
+            <br>
+            <br> Curve:
+            <input name="Curve" type="number" required>
+            <br>
+            <br> FKAccuracy:
+            <input name="FKAccuracy" type="number" required>
+            <br>
+            <br> BallControl:
+            <input name="BallControl" type="number" required>
+            <br>
+            <br> Acceleration:
+            <input name="Acceleration" type="number" required>
+            <br>
+            <br> SprintSpeed:
+            <input name="SprintSpeed" type="number" required>
+            <br>
+            <br> LongPassing:
+            <input name="LongPassing" type="number" required>
+            <br>
+            <br> Agility:
+            <input name="Agility" type="number" required>
+            <br>
+            <br> Reactions:
+            <input name="Reactions" type="number" required>
+            <br>
+            <br> Balance:
+            <input name="Balance" type="number" required>
+            <br>
+            <br> ShotPower:
+            <input name="ShotPower" type="number" required>
+            <br>
+            <br> Jumping:
+            <input name="Jumping" type="number" required>
+            <br>
+            <br> Stamina:
+            <input name="Stamina" type="number" required>
+            <br>
+            <br> Strength:
+            <input name="Strength" type="number" required>
+            <br>
+            <br> LongShots:
+            <input name="LongShots" type="number" required>
+            <br>
+            <br> Aggression:
+            <input name="Aggression" type="number" required>
+            <br>
+            <br> Interceptions:
+            <input name="Interceptions" type="number" required>
+            <br>
+            <br> Positioning:
+            <input name="Positioning" type="number" required>
+            <br>
+            <br> Vision:
+            <input name="Vision" type="number" required>
+            <br>
+            <br> Penalties:
+            <input name="Penalties" type="number" required>
+            <br>
+            <br> Composure:
+            <input name="Composure" type="number" required>
+            <br>
+            <br> Marking:
+            <input name="Marking" type="number" required>
+            <br>
+            <br> StandingTackle:
+            <input name="StandingTackle" type="number" required>
+            <br>
+            <br> SlidingTackle:
+            <input name="SlidingTackle" type="number" required>
+            <br>
+            <br> GKDiving:
+            <input name="GKDiving" type="number" required>
+            <br>
+            <br> GKHandling:
+            <input name="GKHandling" type="number" required>
+            <br>
+            <br> GKKicking:
+            <input name="GKKicking" type="number" required>
+            <br>
+            <br> GKPositioning:
+            <input name="GKPositioning" type="number" required>
+            <br>
+            <br> GKReflexes:
+            <input name="GKReflexes" type="number" required>
+            <br>
+            <br>Predict
+            <input type="submit" class="button">
+        </fieldset>
+        </form>
+
+        <textarea>{{prediction_text}}</textarea>
+
+        <br>
+    </body>
+
+</html>
